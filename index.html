@@ -2,65 +2,132 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Arlanwear - Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlanwear | Moda de Lujo Urbana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <header class="header">
         <div class="logo-area">
-            <img class="logo" src="Arlanwear_files/ChatGPT-Image-21-abr-2026-09_43_17-p.m.png" alt="Logo">
-            <a href="index.html" class="site-title">Arlanwear</a>
+            <img class="logo" src="Arlanwear_files/ChatGPT-Image-21-abr-2026-09_43_17-p.m.png" alt="Arlanwear">
+            <a href="index.html" class="site-title">ARLANWEAR</a>
         </div>
         <nav class="nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="tienda.html">Tienda</a>
-            <a href="colecciones.html">Colecciones</a>
-            <a href="contacto.html">Contacto</a>
+            <a href="index.html">INICIO</a>
+            <a href="tienda.html">TIENDA</a>
+            <a href="colecciones.html">COLECCIONES</a>
+            <a href="contacto.html">CONTACTO</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Estilo único</h1>
-        <p>Moda de lujo que define tu identidad.</p>
-        <a href="tienda.html" class="btn">Comprar ya</a>
+        <h1>ESTILO ÚNICO</h1>
+        <p>Moda de lujo que define tu identidad. Ediciones limitadas para los que se atreven a ser diferentes.</p>
+        <a href="tienda.html" class="btn">DESCUBRE LA COLECCIÓN →</a>
     </section>
 
     <section class="categories">
         <div class="category-card">
             <img src="Arlanwear_files/photo-1592307493366-958033173b23" alt="Edición Limitada">
             <div class="category-overlay">
-                <h3>Edición Limitada</h3>
-                <a href="tienda.html">Ver más →</a>
+                <h3>EDICIÓN LIMITADA</h3>
+                <a href="tienda.html">Explorar →</a>
             </div>
         </div>
         <div class="category-card">
-            <img src="Arlanwear_files/photo-1622114684497-a9820f5ebc41" alt="Más Vendidos">
+            <img src="Arlanwear_files/photo-1622114684497-a9820f5ebc41" alt="Street Luxe">
             <div class="category-overlay">
-                <h3>Más Vendidos</h3>
-                <a href="tienda.html">Ver más →</a>
+                <h3>STREET LUXE</h3>
+                <a href="tienda.html">Explorar →</a>
             </div>
         </div>
         <div class="category-card">
-            <img src="Arlanwear_files/photo-1614942917889-c1f6a8ad933a" alt="Nuevas Colecciones">
+            <img src="Arlanwear_files/photo-1614942917889-c1f6a8ad933a" alt="Nuevas Llegadas">
             <div class="category-overlay">
-                <h3>Nuevas Colecciones</h3>
-                <a href="colecciones.html">Ver más →</a>
+                <h3>NUEVAS LLEGADAS</h3>
+                <a href="colecciones.html">Explorar →</a>
             </div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <h2>MÁS VENDIDOS</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="Arlanwear_files/photo-1592307493366-958033173b23" alt="Zapatillas">
+                <h3>Zapatillas Edición Limit</h3>
+                <div class="price">$650.00</div>
+                <button class="product-btn" onclick="alert('✓ Agregado al carrito')">AÑADIR</button>
+            </div>
+            <div class="product-card">
+                <img src="Arlanwear_files/photo-1696086152513-c74dc1d4b135" alt="Remera">
+                <h3>Remera Negra Logo</h3>
+                <div class="price">$220.00</div>
+                <button class="product-btn" onclick="alert('✓ Agregado al carrito')">AÑADIR</button>
+            </div>
+            <div class="product-card">
+                <img src="Arlanwear_files/photo-1614942917889-c1f6a8ad933a" alt="Pantalón">
+                <h3>Pantalón Sastre Negro</h3>
+                <div class="price">$480.00</div>
+                <button class="product-btn" onclick="alert('✓ Agregado al carrito')">AÑADIR</button>
+            </div>
+            <div class="product-card">
+                <img src="Arlanwear_files/photo-1622114684497-a9820f5ebc41" alt="Chaqueta">
+                <h3>Chaqueta Cuero Negra</h3>
+                <div class="price">$720.00</div>
+                <button class="product-btn" onclick="alert('✓ Agregado al carrito')">AÑADIR</button>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:40px">
+            <a href="tienda.html" class="btn">VER TODOS LOS PRODUCTOS →</a>
         </div>
     </section>
 
     <section class="newsletter">
-        <h2>Únete ahora</h2>
-        <p>Recibí lanzamientos exclusivos de Arlanwear.</p>
+        <h2>ÚNETE AHORA</h2>
+        <p>Recibí lanzamientos exclusivos y acceso anticipado a ediciones limitadas.</p>
         <div class="newsletter-form">
-            <input type="email" placeholder="Tu correo electrónico">
-            <button onclick="alert('¡Gracias por suscribirte!')">Suscribirse</button>
+            <input type="email" id="email-home" placeholder="Tu correo electrónico">
+            <button onclick="alert('¡Gracias por suscribirte! 📧')">SUSCRIBIRSE</button>
         </div>
     </section>
 
     <footer class="footer">
-        <div><h3>Menú</h3><a href="index.html">Inicio</a><a href="tienda.html">Tienda</a><a href="colecciones.html">Colecciones</a><a href="contacto.html">Contacto</a></div>
-        <div><h3>Contacto</h3><a href="mailto:info@arlanwear.com">info@arlanwear.com</a><p>© 2026 Arlanwear</p></div>
+        <div>
+            <h3>ARLANWEAR</h3>
+            <p>Moda de lujo urbana para los que buscan identidad y estatus.</p>
+        </div>
+        <div>
+            <h3>MENÚ</h3>
+            <a href="index.html">Inicio</a>
+            <a href="tienda.html">Tienda</a>
+            <a href="colecciones.html">Colecciones</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <div>
+            <h3>CONTACTO</h3>
+            <a href="mailto:info@arlanwear.com">info@arlanwear.com</a>
+            <p>© 2026 Arlanwear</p>
+        </div>
     </footer>
+
+    <script>
+        // Efecto de fade-in al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        document.querySelectorAll('.category-card, .product-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
