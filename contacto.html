@@ -1,49 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | Arlanwear</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arlanwear — Contacto</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo-area">
-            <img class="logo" src="Arlanwear_files/ChatGPT-Image-21-abr-2026-09_43_17-p.m.png" alt="Arlanwear">
-            <a href="index.html" class="site-title">ARLANWEAR</a>
-        </div>
-        <nav class="nav-links">
-            <a href="index.html">INICIO</a>
-            <a href="tienda.html">TIENDA</a>
-            <a href="colecciones.html">COLECCIONES</a>
-            <a href="contacto.html">CONTACTO</a>
-        </nav>
-    </header>
 
-    <section class="contact-section">
-        <h1>CONTÁCTANOS</h1>
-        <p>¿Tienes preguntas? Estamos aquí para ayudarte.</p>
-        
-        <form class="contact-form" onsubmit="alert('✓ Mensaje enviado. Te contactaremos pronto.'); return false">
-            <input type="text" placeholder="Tu nombre" required>
-            <input type="email" placeholder="Tu email" required>
-            <input type="text" placeholder="Asunto">
-            <textarea rows="5" placeholder="Tu mensaje" required></textarea>
-            <button type="submit" class="btn">ENVIAR MENSAJE →</button>
-        </form>
-        
-        <div class="contact-info">
-            <p>📧 info@arlanwear.com</p>
-            <p>📞 +123 456 789</p>
-            <p>📍 Ciudad de México, MX</p>
-        </div>
-    </section>
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-area">
+    <img class="logo" src="Arlanwear_files/ChatGPT-Image-21-abr-2026-09_43_17-p.m.png" alt="Logo"
+         onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=100&h=100&fit=crop'">
+    <a href="index.html" class="site-title">Arlanwear</a>
+  </div>
+  <nav class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Tienda</a>
+    <a href="colecciones.html">Colecciones</a>
+    <a href="contacto.html">Contacto</a>
+    <button class="cart-icon" onclick="openCart()" aria-label="Carrito">
+      🛍
+      <span class="cart-count" id="cart-badge">0</span>
+    </button>
+  </nav>
+</header>
 
-    <footer class="footer">
-        <div><h3>ARLANWEAR</h3><p>Moda de lujo urbana.</p></div>
-        <div><h3>MENÚ</h3><a href="index.html">Inicio</a><a href="tienda.html">Tienda</a><a href="colecciones.html">Colecciones</a><a href="contacto.html">Contacto</a></div>
-        <div><h3>CONTACTO</h3><a href="mailto:info@arlanwear.com">info@arlanwear.com</a><p>© 2026 Arlanwear</p></div>
-    </footer>
+<!-- CONTACT LAYOUT -->
+<div class="contact-layout">
+
+  <!-- LEFT: Info -->
+  <div class="contact-left">
+    <p class="section-eyebrow" style="color:var(--gold-light)">Hablemos</p>
+    <h2>Estamos<br>aquí para<br>ayudarte</h2>
+
+    <div class="contact-info-item">
+      <div class="contact-icon">📧</div>
+      <div>
+        <p class="contact-detail-label">Email</p>
+        <p class="contact-detail-value">info@arlanwear.com</p>
+      </div>
+    </div>
+
+    <div class="contact-info-item">
+      <div class="contact-icon">📞</div>
+      <div>
+        <p class="contact-detail-label">Teléfono</p>
+        <p class="contact-detail-value">+123 456 789</p>
+      </div>
+    </div>
+
+    <div class="contact-info-item">
+      <div class="contact-icon">🕐</div>
+      <div>
+        <p class="contact-detail-label">Horario de atención</p>
+        <p class="contact-detail-value">Lun–Vie: 9am – 6pm</p>
+      </div>
+    </div>
+
+    <div class="contact-info-item" style="border:none;margin:0;padding:0">
+      <div class="contact-icon">📍</div>
+      <div>
+        <p class="contact-detail-label">Ubicación</p>
+        <p class="contact-detail-value">Argentina — Envíos a todo el país</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Form -->
+  <div class="contact-right">
+    <p class="section-eyebrow">Formulario de Contacto</p>
+    <h2 class="section-title" style="font-size:clamp(28px,3vw,42px);margin-top:10px">Envianos tu<br>consulta</h2>
+
+    <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div class="form-group">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-input" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Apellido</label>
+          <input type="text" class="form-input" placeholder="Tu apellido">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" placeholder="tu@email.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Asunto</label>
+        <select class="form-input" style="cursor:pointer;appearance:auto">
+          <option>Consulta general</option>
+          <option>Seguimiento de pedido</option>
+          <option>Cambios y devoluciones</option>
+          <option>Colaboraciones</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Mensaje</label>
+        <textarea class="form-input" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-start">
+        Enviar mensaje →
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="site-title">Arlanwear</a>
+      <p>Moda de lujo que define tu identidad.</p>
+    </div>
+    <div>
+      <h4>Menú</h4>
+      <a href="index.html">Inicio</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="colecciones.html">Colecciones</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <div>
+      <h4>Ayuda</h4>
+      <a href="#">Guía de tallas</a>
+      <a href="#">Envíos y devoluciones</a>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <a href="mailto:info@arlanwear.com">info@arlanwear.com</a>
+      <a href="tel:+123456789">+123 456 789</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Arlanwear. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- CART -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<aside class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>Tu Carrito</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span class="cart-subtotal-price" id="cart-total">$0.00</span>
+    </div>
+    <button class="cart-checkout-btn" onclick="alert('¡Checkout próximamente!')">Finalizar Compra</button>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script src="cart.js"></script>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = 'Enviando...';
+  btn.disabled = true;
+  setTimeout(() => {
+    showToast('¡Mensaje enviado! Te contactaremos pronto.');
+    e.target.reset();
+    btn.textContent = 'Enviar mensaje →';
+    btn.disabled = false;
+  }, 1200);
+}
+</script>
 </body>
 </html>
