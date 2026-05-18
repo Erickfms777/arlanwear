@@ -15,15 +15,20 @@
          onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=100&h=100&fit=crop'">
     <a href="index.html" class="site-title">Arlanwear</a>
   </div>
-  <nav class="nav-links">
-    <a href="index.html">Inicio</a>
-    <a href="tienda.html">Tienda</a>
-    <a href="colecciones.html">Colecciones</a>
-    <a href="contacto.html">Contacto</a>
+  <div style="display:flex;align-items:center;gap:15px">
     <button class="cart-icon" onclick="openCart()" aria-label="Abrir carrito">
       🛍
       <span class="cart-count" id="cart-badge">0</span>
     </button>
+    <button class="hamburger" id="hamburger" aria-label="Menú" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-links" id="nav-links">
+    <a href="index.html" onclick="closeMenu()">Inicio</a>
+    <a href="tienda.html" onclick="closeMenu()">Tienda</a>
+    <a href="colecciones.html" onclick="closeMenu()">Colecciones</a>
+    <a href="contacto.html" onclick="closeMenu()">Contacto</a>
   </nav>
 </header>
 
@@ -231,5 +236,16 @@
 <div class="toast" id="toast"></div>
 
 <script src="cart.js"></script>
-</body>
+<script>
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('nav-links').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('nav-links').classList.contains('open') ? 'hidden' : '';
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('nav-links').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
 </html>
