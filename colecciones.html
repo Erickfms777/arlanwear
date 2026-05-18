@@ -1,57 +1,166 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colecciones | Arlanwear</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arlanwear — Colecciones</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo-area">
-            <img class="logo" src="Arlanwear_files/ChatGPT-Image-21-abr-2026-09_43_17-p.m.png" alt="Arlanwear">
-            <a href="index.html" class="site-title">ARLANWEAR</a>
-        </div>
-        <nav class="nav-links">
-            <a href="index.html">INICIO</a>
-            <a href="tienda.html">TIENDA</a>
-            <a href="colecciones.html">COLECCIONES</a>
-            <a href="contacto.html">CONTACTO</a>
-        </nav>
-    </header>
 
-    <section class="products-section">
-        <h1>NUESTRAS COLECCIONES</h1>
-        <div class="categories">
-            <div class="category-card">
-                <img src="Arlanwear_files/photo-1592307493366-958033173b23" alt="Street Luxe">
-                <div class="category-overlay">
-                    <h3>STREET LUXE</h3>
-                    <a href="tienda.html">Ver Colección →</a>
-                </div>
-            </div>
-            <div class="category-card">
-                <img src="Arlanwear_files/photo-1622114684497-a9820f5ebc41" alt="Edición Limitada">
-                <div class="category-overlay">
-                    <h3>EDICIÓN LIMITADA</h3>
-                    <a href="tienda.html">Ver Colección →</a>
-                </div>
-            </div>
-            <div class="category-card">
-                <img src="Arlanwear_files/photo-1614942917889-c1f6a8ad933a" alt="Urban Classics">
-                <div class="category-overlay">
-                    <h3>URBAN CLASSICS</h3>
-                    <a href="tienda.html">Ver Colección →</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-area">
+    <img class="logo" src="Arlanwear_files/ChatGPT-Image-21-abr-2026-09_43_17-p.m.png" alt="Logo"
+         onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=100&h=100&fit=crop'">
+    <a href="index.html" class="site-title">Arlanwear</a>
+  </div>
+  <nav class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="tienda.html">Tienda</a>
+    <a href="colecciones.html">Colecciones</a>
+    <a href="contacto.html">Contacto</a>
+    <button class="cart-icon" onclick="openCart()" aria-label="Carrito">
+      🛍
+      <span class="cart-count" id="cart-badge">0</span>
+    </button>
+  </nav>
+</header>
 
-    <footer class="footer">
-        <div><h3>ARLANWEAR</h3><p>Moda de lujo urbana.</p></div>
-        <div><h3>MENÚ</h3><a href="index.html">Inicio</a><a href="tienda.html">Tienda</a><a href="colecciones.html">Colecciones</a><a href="contacto.html">Contacto</a></div>
-        <div><h3>CONTACTO</h3><a href="mailto:info@arlanwear.com">info@arlanwear.com</a><p>© 2026 Arlanwear</p></div>
-    </footer>
+<!-- PAGE HERO -->
+<div class="colecciones-hero">
+  <div class="page-hero-content">
+    <p class="section-eyebrow">2026</p>
+    <h1>Nuestras Colecciones</h1>
+  </div>
+</div>
+
+<!-- COLLECTIONS GRID -->
+<section style="padding:70px 60px;background:var(--cream)">
+  <div class="section-header reveal" style="margin-bottom:60px">
+    <p class="section-eyebrow">Temporada 2026</p>
+    <h2 class="section-title">Universos de estilo<br>para cada momento</h2>
+  </div>
+
+  <!-- Main Grid -->
+  <div class="collection-grid reveal">
+    <div class="collection-card tall">
+      <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=900&q=80" alt="Street Luxe">
+      <div class="overlay">
+        <h3>Street Luxe</h3>
+        <p>Lo urbano elevado al máximo nivel de sofisticación</p>
+        <a href="tienda.html">Explorar colección</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:25px">
+      <div class="collection-card medium">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700&q=80" alt="Edición Limitada">
+        <div class="overlay">
+          <h3>Edición Limitada</h3>
+          <p>Piezas únicas con producción restringida</p>
+          <a href="tienda.html">Explorar colección</a>
+        </div>
+      </div>
+      <div class="collection-card medium">
+        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=700&q=80" alt="Clásicos">
+        <div class="overlay">
+          <h3>Clásicos Atemporales</h3>
+          <p>Los esenciales que nunca pasan de moda</p>
+          <a href="tienda.html">Explorar colección</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second row -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:25px" class="reveal">
+    <div class="collection-card" style="height:350px">
+      <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=700&q=80" alt="Noir">
+      <div class="overlay">
+        <h3>Noir</h3>
+        <p>La elegancia del negro absoluto</p>
+        <a href="tienda.html">Explorar</a>
+      </div>
+    </div>
+    <div class="collection-card" style="height:350px">
+      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=700&q=80" alt="Resort">
+      <div class="overlay">
+        <h3>Resort</h3>
+        <p>Lujo veraniego sin compromiso</p>
+        <a href="tienda.html">Explorar</a>
+      </div>
+    </div>
+    <div class="collection-card" style="height:350px">
+      <img src="https://images.unsplash.com/photo-1467043237213-65f2da53396f?w=700&q=80" alt="Avant-Garde">
+      <div class="overlay">
+        <h3>Avant-Garde</h3>
+        <p>El futuro de la moda, hoy</p>
+        <a href="tienda.html">Explorar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="reveal">
+    <p class="section-eyebrow">Club Exclusivo</p>
+    <h2>Sé el primero<br>en saber</h2>
+    <p>Acceso anticipado a nuevas colecciones y drops exclusivos</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Tu correo electrónico">
+      <button onclick="alert('¡Suscripto! Te avisaremos antes que nadie.')">Unirse</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="site-title">Arlanwear</a>
+      <p>Moda de lujo que define tu identidad.</p>
+    </div>
+    <div>
+      <h4>Menú</h4>
+      <a href="index.html">Inicio</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="colecciones.html">Colecciones</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <div>
+      <h4>Ayuda</h4>
+      <a href="#">Guía de tallas</a>
+      <a href="#">Envíos</a>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <a href="mailto:info@arlanwear.com">info@arlanwear.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Arlanwear. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- CART -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<aside class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3>Tu Carrito</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span class="cart-subtotal-price" id="cart-total">$0.00</span>
+    </div>
+    <button class="cart-checkout-btn" onclick="alert('¡Checkout próximamente!')">Finalizar Compra</button>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script src="cart.js"></script>
 </body>
 </html>
