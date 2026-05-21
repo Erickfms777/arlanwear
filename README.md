@@ -169,3 +169,7 @@ Sitio: [erickfms777.github.io/arlanwear](https://erickfms777.github.io/arlanwear
 ---
 
 © 2026 Arlanwear. Todos los derechos reservados.
+
+Este proyecto está protegido bajo una licencia de derechos reservados. Queda prohibida
+la copia, modificación o distribución del código sin autorización expresa del autor.
+Consultar el archivo [LICENSE](./LICENSE) para más detalles.
